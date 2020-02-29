@@ -1,0 +1,58 @@
+{{^isModal}}
+  {{>layout/header}}
+{{/isModal}}
+
+<style>
+  .row {
+    padding: 7px;
+  }
+
+  .card-deck .card {
+    margin-right: 7px;
+    margin-left: 7px;
+  '
+  }
+</style>
+
+<div class="container-fluid">
+
+  <div class="form-group">
+    <label for="idUser">{{#i18n}}user.id{{/i18n}}</label>
+    <input class="form-control" id="idUser" name="user.id" placeholder="{{#i18n}}user.id.placeholder{{/i18n}}"
+           value="{{user.id}}">
+  </div>
+  <div class="form-group">
+    <label for="nameUser">{{#i18n}}user.name{{/i18n}}</label>
+    <input class="form-control" id="nameUser" name="user.name"
+           placeholder="{{#i18n}}user.name.placeholder{{/i18n}}"
+           value="{{user.name}}">
+  </div>
+
+  <div class="form-group">
+    <label for="emailUser">{{#i18n}}user.email{{/i18n}}</label>
+    <input type="email" class="form-control" id="emailUser" name="user.email"
+           placeholder="{{#i18n}}user.email.placeholder{{/i18n}}"
+           value="{{user.email}}">
+  </div>
+  <div class="form-group">
+    <label for="passwordUser">{{#i18n}}user.password{{/i18n}}</label>
+    <input type="password" class="form-control" id="passwordUser" name="user.password"
+           placeholder="{{#i18n}}user.password.placeholder{{/i18n}}"
+           value="{{user.password}}">
+  </div>
+
+  {{^isModal}}
+    <div class="modal-footer">
+      {{#isEdit}}
+        <button type="button" class="float-right btn btn-primary">{{#i18n}}application.button.save{{/i18n}}</button>
+      {{/isEdit}}
+      {{^isEdit}}
+        <button type="button" class="float-right btn btn-primary">{{#i18n}}application.button.edit{{/i18n}}</button>
+      {{/isEdit}}
+    </div>
+  {{/isModal}}
+
+</div>
+
+
+

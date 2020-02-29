@@ -1,0 +1,54 @@
+app:
+  name: ExchangeProject
+
+spring:
+  mustache:
+    expose-request-attributes: true
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+  resources:
+    static-locations: classpath:/static/
+    cache:
+      period: 0
+  datasource:
+    #url: jdbc:h2:mem:app
+    url: jdbc:h2:file:~/db-ExchangeProject;DB_CLOSE_ON_EXIT=FALSE;AUTO_RECONNECT=TRUE;CACHE_SIZE=431072
+    driverClassName: org.h2.Driver
+    username: user
+    password:
+    platform: h2
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      idle-timeout: 10000
+      maximum-pool-size: 30
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        show_sql: false
+        use_sql_comments: true
+        format_sql: true
+  h2:
+    console:
+      enabled: true
+      path: /console
+      settings:
+        trace: false
+        web-allow-others: false
+
+spring.autoconfigure.exclude: org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
+#security.basic.enabled: false
+#management.security.enabled: false
+
+logging:
+  level:
+    ROOT: ERROR
+    ca.domus: DEBUG
+    org.springframework.web.servlet.DispatcherServlet: DEBUG
+    org.hibernate: error
+    org.hibernate.stat: error
+    org.hibernate.type: error

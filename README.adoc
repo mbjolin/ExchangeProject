@@ -1,0 +1,35 @@
+# ExchangeProject
+
+Voici un projet exemple qui utilise :
+
+* Gradle
+* SpringBoot
+* Spring framework
+* Mustache
+* Bootstrap
+* Hibernate
+* H2
+* JavaFaker
+
+## compilation
+
+Pour linux +
+./gradlew build
+
+Pour windows (il me semble) +
+gradlew.bat build
+
+## rouler
+
+cd build/libs +
+java -jar ExchangeProject-0.0.1-SNAPSHOT.jar
+
+ou +
+./gradlew bootRun
+
+## fonctions problématiques
+
+* un ajout doit impérativement avoir un identifiant qui n'existe pas dans la base de données.
+* La recherche en haut ne fonctionne pas.
+* Le login/logout ne fonctionne pas.
+

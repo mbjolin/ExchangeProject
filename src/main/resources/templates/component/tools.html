@@ -1,0 +1,28 @@
+<div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+  <button type="button" class="btn btn-secondary" onclick="createObject($(this))">
+    <i class="fas fa-plus-circle"></i>
+  </button>
+  <button type="button" class="btn btn-secondary" onclick="deleteObject($(this))">
+    <i class="fas fa-minus-circle"></i>
+  </button>
+  <button type="button" class="btn btn-secondary" onclick="editObject($(this))">
+    <i class="fas fa-pen"></i>
+  </button>
+
+  <div class="btn-group" role="group">
+    <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="fasse">
+    </button>
+    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+      <button type="button" class="btn btn-secondary">
+        <i class="fas fa-clone"></i>
+      </button>
+      <button type="button" class="btn btn-secondary"  onclick="editObjectNewWindow($(this))">
+        <i class="fas fa-edit"></i>
+      </button>
+      <button type="button" class="btn btn-secondary" onclick="openObjectNewWindow($(this))">
+        <i class="fas fa-external-link"></i>
+      </button>
+    </div>
+  </div>
+</div>
+

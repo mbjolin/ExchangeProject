@@ -1,0 +1,48 @@
+{{^isModal}}
+  {{>layout/header}}
+{{/isModal}}
+
+<style>
+  .row {
+    padding: 7px;
+  }
+
+  .card-deck .card {
+    margin-right: 7px;
+    margin-left: 7px;
+  '
+  }
+</style>
+
+</header>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <div class="card-deck">
+        <div class="card">
+          <div class="card-header" style="border-bottom: none;">
+            <div class="d-flex bd-highlight">
+
+              <div class="p-2 flex-grow-1 bd-highlight"><input value="{{activity.name}}"></div>
+              <div class="p-2 bd-highlight">{{#i18n}}activity.lastModificationDate{{/i18n}}: 2018/09/1</div>
+              <div class="p-2 bd-highlight">Flex item</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{>component/starmodel}}
+  {{^isModal}}
+    <div class="modal-footer">
+      {{#isEdit}}
+        <button type="button" class="float-right btn btn-primary">{{#i18n}}application.button.save{{/i18n}}</button>
+      {{/isEdit}}
+      {{^isEdit}}
+        <button type="button" class="float-right btn btn-primary">{{#i18n}}application.button.edit{{/i18n}}</button>
+      {{/isEdit}}
+    </div>
+  {{/isModal}}
+</div>
+

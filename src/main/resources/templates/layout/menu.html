@@ -1,0 +1,53 @@
+<style>
+
+  li a {
+    font-size: 10px;
+
+  }
+
+  li a i {
+    font-size: 30px;
+    padding: 5px;
+  }
+
+</style>
+<nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+  <a class="navbar-brand" href="#">Exchange Project</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="fasse"
+          aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active"><a class="nav-link" href="/" title="home"><i class="fas fa-home"></i>
+        {{#i18n}}menu.dashboard
+        {{/i18n}}<span class="sr-only">(current)</span></a></li>
+      <li class="nav-item"><a class="nav-link" href="/agenda"><i class="fas fa-calendar-alt"></i>
+        {{#i18n}}menu.agenda{{/i18n}}</a></li>
+    </ul>
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="{{#i18n}}menu.search{{/i18n}}"
+             aria-label="Search">
+      <button class="btn my-2 my-sm-0" type="submit">{{#i18n}}menu.search{{/i18n}}</button>
+    </form>
+    <ul class="navbar-nav my-2 my-lg-0">
+      <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="fasse"
+      ><i class="fas fa-user-circle"></i> CurrentUser </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">logout</a> <a class="dropdown-item" href="#">config</a>
+        </div>
+      </li>
+    </ul>
+
+  </div>
+</nav>
+
+<script>
+  $(document).ready(function () {
+    $('li.active').removeClass('active');
+    $('a[href="' + location.pathname + '"]').closest('li').addClass('active');
+  });
+</script>

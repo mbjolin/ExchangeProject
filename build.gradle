@@ -1,0 +1,64 @@
+buildscript {
+    repositories {
+        maven { url "https://plugins.gradle.org/m2/" }
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:2.2.2.RELEASE"
+        classpath "org.hidetake:gradle-ssh-plugin:2.9.0"
+        classpath 'nu.studer:gradle-jooq-plugin:2.0.9'
+        classpath 'org.jooq:jooq:3.10.5'
+        classpath 'org.jooq:jooq-codegen:3.10.5'
+        classpath("org.jooq:jooq-meta-extensions:3.10.5")
+    }
+}
+plugins {
+  id 'org.springframework.boot' version '2.2.2.RELEASE'
+  id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+  id 'java'
+  id 'idea'
+}
+
+ext {
+  versionSpringboot = "2.2.2.RELEASE"
+}
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+group = "ca.amazing"
+version = "0.0.1-SNAPSHOT"
+sourceCompatibility = 1.8
+
+apply plugin: 'org.springframework.boot'
+
+dependencies {
+    compile 'org.webjars:jquery:3.3.1-1'
+    compile 'org.webjars:bootstrap:4.1.1'
+    compile 'org.webjars:popper.js:1.14.1'
+    compile 'org.webjars:fullcalendar:3.9.0'
+    compile 'org.webjars:datatables:1.10.19'
+    compile 'org.webjars:chartjs:2.7.2'
+    compile 'org.webjars.npm:chartjs-color:2.2.0'
+    compile 'org.webjars:momentjs:2.22.2'
+    compile group: 'be.ceau', name: 'chart', version: '2.4.0'
+    compile "org.springframework.boot:spring-boot-starter-web:${versionSpringboot}"
+    compile "org.springframework.boot:spring-boot-starter-security:${versionSpringboot}"
+    compile "org.springframework.boot:spring-boot-starter-data-jpa:${versionSpringboot}"
+    compile "org.springframework.boot:spring-boot-starter-mustache:${versionSpringboot}"
+    compile "com.fasterxml.jackson.datatype:jackson-datatype-hibernate5:2.9.6"
+    compile "com.github.sps.mustache:mustache-spring-view:1.4"
+    compile "com.google.guava:guava:23.0"
+    compile "com.fasterxml.jackson.datatype:jackson-datatype-guava:2.9.6"
+    compile group: 'com.fasterxml.jackson.module', name: 'jackson-modules-java8', version: '2.9.7', ext: 'pom'
+    compile group: 'hikari-cp', name: 'hikari-cp', version: '2.4.0'
+    compile group: 'com.github.javafaker', name: 'javafaker', version: '0.15'
+    compile group: 'org.yaml', name: 'snakeyaml', version: '1.23'
+    compile group: 'org.hibernate', name: 'hibernate-java8', version: '5.3.6.Final'
+    runtime "com.h2database:h2:1.4.196"
+    testCompile "org.springframework.boot:spring-boot-starter-test:${versionSpringboot}"
+}
+

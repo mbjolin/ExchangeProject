@@ -1,0 +1,36 @@
+{{>layout/header}}
+{{>layout/menu}}
+
+
+{{>component/modal}}
+
+<table id="myTable" class="display">
+  <thead>
+  <tr>
+    <th>{{#i18n}}user.id{{/i18n}}</th>
+    <th>{{#i18n}}user.name{{/i18n}}</th>
+    <th></th>
+  </tr>
+  </thead>
+</table>
+
+
+<script src="js/crud.js"></script>
+<script src="js/tools.js">
+  initTools("user");
+</script>
+
+<!-- maj du table automatiquement -->
+<script>
+  initTools("user");
+  var toolsHtml = `{{>component/tools}}`;
+  var myTable = $('#myTable').DataTable({
+    "ajax": "/datatable",
+    "columns": [
+        {"data": "id"},
+        {"data": "name"},
+        {"defaultContent": toolsHtml}
+      ]
+  });
+</script>
+{{>layout/footer}}
